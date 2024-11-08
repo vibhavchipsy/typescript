@@ -1,3 +1,34 @@
+interface Booking {
+    id: number;
+    name: string;
+    date: string;
+    duration: number;
+}
+
+const sampleBooking: Booking = {
+    id: 1,
+    name: "John Doe",
+    date: "2024-11-10",
+    duration: 2,
+};
+
+console.log("Sample Booking: ", sampleBooking);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const greeting: string = "Hello";
 const year: number = 2024;
 const isTypescriptFun: boolean = true;
