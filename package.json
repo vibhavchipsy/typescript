@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/vibhavchipsy/typescript#readme",
   "devDependencies": {
+    "@types/node": "^22.9.0",
     "typescript": "^5.6.3"
   }
 }

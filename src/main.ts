@@ -1,42 +1,18 @@
-interface Booking {
-    id: number;
-    name: string;
-    date: string;
-    duration: number;
-}
+import fs from 'fs';
+import path from 'path';
 
-const sampleBooking: Booking = {
-    id: 1,
-    name: "John Doe",
-    date: "2024-11-10",
-    duration: 2,
+interface Booking {
+    id: number,
+    name: string,
+    date: string,
+    duration: number,
 };
 
-console.log("Sample Booking: ", sampleBooking);
+const filePath = path.resolve(__dirname, '../src/data.json');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const greeting: string = "Hello";
-const year: number = 2024;
-const isTypescriptFun: boolean = true;
-
-console.log(greeting, year, isTypescriptFun);
-
-function add(a: number, b: number): number {
-    return a + b;
+function readBookings(): Booking[] {
+    const data = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(data);
 }
 
-console.log("Sum of 3 and 7 is " + add(3, 7));
+console.log("initial bookings: ", readBookings());
