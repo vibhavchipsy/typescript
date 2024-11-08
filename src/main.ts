@@ -15,4 +15,11 @@ function readBookings(): Booking[] {
     return JSON.parse(data);
 }
 
+function createBooking(newBooking: Booking): void {
+    const bookings = readBookings();
+    bookings.push(newBooking);
+    fs.writeFileSync(filePath, JSON.stringify(bookings, null, 2));
+}
+
 console.log("initial bookings: ", readBookings());
+createBooking({ id: 3, name: "Charlie Brown", date: "2024-11-20", duration: 2 });
