@@ -38,6 +38,8 @@ app.delete('/api/bookings/:id', (req: Request, res: Response) => {
     res.status(200).json({ message: 'Booking deleted successfully' });
 });
 
+
+
 app.listen(port, () => {
     console.log(`server is running on http://localhost:${port}`);
 });

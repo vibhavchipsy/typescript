@@ -14,15 +14,14 @@
   },
   {
     "id": 3,
-    "name": "Charlie Brown",
-    "date": "2024-11-20",
-    "duration": 2
+    "name": "three name",
+    "date": "three date",
+    "duration": 3
   },
   {
     "id": 1,
-    "customerName": "John Doe",
-    "date": "2024-11-08",
-    "roomNumber": 101,
-    "status": "Confirmed"
+    "name": "one name",
+    "date": "one date",
+    "duration": 1
   }
 ]

@@ -39,10 +39,10 @@ export function deleteBooking(id: number): void {
     fs.writeFileSync(filePath, JSON.stringify(updatedBookings, null, 2));
 }
 
-console.log("initial bookings: ", readBookings());
-createBooking({ id: 3, name: "Charlie Brown", date: "2024-11-20", duration: 2 });
-console.log("After Adding Booking:", readBookings());
-updateBooking(2, { duration: 4 });
-console.log("After Updating Booking ID 2:", readBookings());
-deleteBooking(1);
-console.log("After Deleting Booking ID 1:", readBookings());
+// console.log("initial bookings: ", readBookings());
+// createBooking({ id: 3, name: "Charlie Brown", date: "2024-11-20", duration: 2 });
+// console.log("After Adding Booking:", readBookings());
+// updateBooking(2, { duration: 4 });
+// console.log("After Updating Booking ID 2:", readBookings());
+// deleteBooking(1);
+// console.log("After Deleting Booking ID 1:", readBookings());
