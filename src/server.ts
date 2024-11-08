@@ -1,15 +1,18 @@
 import express, { Request, Response } from 'express';
 import { readBookings, createBooking, updateBooking, deleteBooking } from './main';
+import { create } from 'domain';
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
+// Route to get all bookings
 app.get('/api/bookings', (req, res) => {
     res.json(readBookings());
 });
 
+// Route to get a booking by ID
 app.get('/api/bookings/:id', (req: Request, res: Response) => {
     const bookingId = parseInt(req.params.id, 10);
     const bookings = readBookings();
@@ -20,6 +23,19 @@ app.get('/api/bookings/:id', (req: Request, res: Response) => {
     } else {
         res.status(404).json({ message: 'Booking not found' });
     }
+});
+
+// Route to create a new booking
+app.post('/api/bookings', (req: Request, res: Response) => {
+    const newBooking = req.body;
+    createBooking(newBooking);
+    res.status(201).json(newBooking);
+});
+
+app.delete('/api/bookings/:id', (req: Request, res: Response) => {
+    const bookingId = parseInt(req.params.id, 10);
+    deleteBooking(bookingId);
+    res.status(200).json({ message: 'Booking deleted successfully' });
 });
 
 app.listen(port, () => {
