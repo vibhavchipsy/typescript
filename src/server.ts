@@ -32,6 +32,13 @@ app.post('/api/bookings', (req: Request, res: Response) => {
     res.status(201).json(newBooking);
 });
 
+app.put('/api/bookings/:id', (req, res) => {
+    const bookingId = parseInt(req.params.id, 10);
+    const updatedInfo = req.body;
+    updateBooking(bookingId, updatedInfo);
+    res.status(200).json({ message: "booking updated successfully" });
+});
+
 app.delete('/api/bookings/:id', (req: Request, res: Response) => {
     const bookingId = parseInt(req.params.id, 10);
     deleteBooking(bookingId);

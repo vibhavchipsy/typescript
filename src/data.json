@@ -1,11 +1,5 @@
 [
   {
-    "id": 2,
-    "name": "Bob Smith",
-    "date": "2024-11-15",
-    "duration": 4
-  },
-  {
     "id": 4,
     "customerName": "Alice Johnson",
     "date": "2024-11-08",
@@ -20,8 +14,14 @@
   },
   {
     "id": 1,
-    "name": "one name",
-    "date": "one date",
+    "name": "1 name",
+    "date": "1 date",
     "duration": 1
+  },
+  {
+    "id": 2,
+    "name": "2 name",
+    "date": "2 date",
+    "duration": 2
   }
 ]
