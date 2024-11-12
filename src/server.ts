@@ -2,9 +2,11 @@ import express, { Request, Response } from 'express';
 import { readBookings, createBooking, updateBooking, deleteBooking } from './main';
 import { create } from 'domain';
 
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
+app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(express.json());
 
 // Route to get all bookings
