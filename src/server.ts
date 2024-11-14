@@ -7,6 +7,7 @@ connectDB();
 const cors = require('cors');
 const app = express();
 const port = 3000;
+const PORT = process.env.PORT;
 
 app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(express.json());
@@ -51,4 +52,8 @@ app.delete('/api/bookings/:id', (req: Request, res: Response) => {
 
 app.listen(port, () => {
     console.log(`server is running on http://localhost:${port}`);
+});
+
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`);
 });
