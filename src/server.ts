@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import { readBookings, createBooking, updateBooking, deleteBooking } from './main';
 import { create } from 'domain';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
 dotenv.config();
 const mongoUri = process.env.MONGODB_URI;
