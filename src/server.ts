@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import { readBookings, createBooking, updateBooking, deleteBooking } from './main';
 import connectDB from './config/database';
+import bookingRoutes from './routes/bookingRoutes';
 
 connectDB();
 
@@ -54,6 +55,7 @@ app.listen(port, () => {
     console.log(`server is running on http://localhost:${port}`);
 });
 
+app.use('/api/bookings', bookingRoutes);
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
 });

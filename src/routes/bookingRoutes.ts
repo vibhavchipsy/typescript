@@ -1,10 +1,10 @@
 // Define API endpoints
 import express from "express";
-import { getBookings, createBooking, updateBooking, deleteBooking } from "../controllers/bookingController";
+import { getBookings as getAllBookings, createBooking, updateBooking, deleteBooking } from "../controllers/bookingController";
 
 const router = express.Router();
 
-router.get('/', getBookings);
+router.get('/', getAllBookings);
 router.post('/', createBooking);
 router.put('/:id', updateBooking);
 router.delete(':id', deleteBooking);
