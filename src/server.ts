@@ -10,13 +10,9 @@ const app = express();
 const port = 3000;
 const PORT = process.env.PORT;
 
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors());
 app.use(express.json());
-
-// Route to get all bookings
-app.get('/api/bookings', (req, res) => {
-    res.json(readBookings());
-});
+app.use('/api/bookings', bookingRoutes);
 
 // Route to get a booking by ID
 app.get('/api/bookings/:id', (req: Request, res: Response) => {
@@ -51,11 +47,6 @@ app.delete('/api/bookings/:id', (req: Request, res: Response) => {
     res.status(200).json({ message: 'Booking deleted successfully' });
 });
 
-app.listen(port, () => {
-    console.log(`server is running on http://localhost:${port}`);
-});
-
-app.use('/api/bookings', bookingRoutes);
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
 });
