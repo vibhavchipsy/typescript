@@ -1,1 +1,1 @@
-// Custom middleware
+// Custom middleware for authentication, error handling, etc. (OPTIONAL)
