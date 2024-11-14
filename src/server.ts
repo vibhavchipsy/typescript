@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express';
 import { readBookings, createBooking, updateBooking, deleteBooking } from './main';
 import connectDB from './config/database';
 
+connectDB();
+
 const cors = require('cors');
 const app = express();
 const port = 3000;
@@ -46,8 +48,6 @@ app.delete('/api/bookings/:id', (req: Request, res: Response) => {
     deleteBooking(bookingId);
     res.status(200).json({ message: 'Booking deleted successfully' });
 });
-
-
 
 app.listen(port, () => {
     console.log(`server is running on http://localhost:${port}`);
