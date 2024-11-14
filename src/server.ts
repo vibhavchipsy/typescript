@@ -1,11 +1,7 @@
 import express, { Request, Response } from 'express';
 import { readBookings, createBooking, updateBooking, deleteBooking } from './main';
-import { create } from 'domain';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+import connectDB from './config/database';
 
-dotenv.config();
-const mongoUri = process.env.MONGODB_URI;
 const cors = require('cors');
 const app = express();
 const port = 3000;
